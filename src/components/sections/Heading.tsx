@@ -1,3 +1,5 @@
+import { format, getDay, parseISO } from 'date-fns'
+
 import classNames from 'classnames/bind'
 import style from './Heading.module.scss'
 
@@ -5,11 +7,22 @@ import Section from '@shared/Section'
 
 const cx = classNames.bind(style)
 
-function Heading() {
+const DAYS = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+]
+
+function Heading({ date }: { date: string }) {
+  const weddingDate = parseISO(date)
   return (
     <Section className={cx(`container`)}>
-      <div className={cx(`txt-date`)}>24.10.21</div>
-      <div className={cx(`txt-day`)}>OCTOBER</div>
+      <div className={cx(`txt-date`)}>{format(weddingDate, 'yy.MM.dd')}</div>
+      <div className={cx(`txt-day`)}>{DAYS[getDay(weddingDate)]}</div>
     </Section>
   )
 }

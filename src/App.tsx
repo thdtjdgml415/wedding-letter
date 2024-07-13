@@ -3,13 +3,15 @@ import classNames from 'classnames/bind'
 import { useEffect, useState } from 'react'
 import styles from './App.module.scss'
 
+import { Wedding } from '@models/wedding'
+
 import Heading from './components/sections/Heading'
 import Video from './components/sections/Video'
 
 const cx = classNames.bind(styles)
 
 function App() {
-  const [wedding, setWedding] = useState(null)
+  const [wedding, setWedding] = useState<Wedding | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   // 1. wedding 데이터 호출
@@ -37,6 +39,8 @@ function App() {
       })
   }, [])
 
+  if (wedding == null) return null
+
   if (loading) {
     return <FullScreenMessage type="loading" />
   }
@@ -45,9 +49,11 @@ function App() {
     return <FullScreenMessage type="error" />
   }
 
+  const { date } = wedding
+
   return (
     <div className={cx('container')}>
-      <Heading />
+      <Heading date={date} />
       <Video />
       {JSON.stringify(wedding)}
     </div>
