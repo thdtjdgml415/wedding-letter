@@ -6,7 +6,10 @@ import styles from './App.module.scss'
 import { Wedding } from '@models/wedding'
 
 import Heading from './components/sections/Heading'
+import ImageGallery from './components/sections/ImageGallery'
+import Invitation from './components/sections/Invitation'
 import Video from './components/sections/Video'
+import Intro from './components/shared/Intro'
 
 const cx = classNames.bind(styles)
 
@@ -49,12 +52,22 @@ function App() {
     return <FullScreenMessage type="error" />
   }
 
-  const { date } = wedding
+  const { date, galleryImages, groom, bride, location, message } = wedding
 
   return (
     <div className={cx('container')}>
       <Heading date={date} />
       <Video />
+      <Intro
+        groomName={groom.name}
+        brideName={bride.name}
+        locationName={location.name}
+        date={date}
+        message={message.intro}
+      />
+      <Invitation message={message.invitation} />
+      <ImageGallery images={galleryImages} />
+
       {JSON.stringify(wedding)}
     </div>
   )

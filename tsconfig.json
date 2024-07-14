@@ -17,5 +17,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "tsconfig.paths.json", "declarations.d.ts"]
+  "include": ["src", "tsconfig.paths.json", "global.d.ts"]
 }
