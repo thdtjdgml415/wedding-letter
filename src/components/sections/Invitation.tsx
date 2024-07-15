@@ -8,8 +8,8 @@ const cx = classNames.bind(styles)
 function Invitation({ message }: { message: string }) {
   return (
     <Section className={cx(`container`)}>
-      <Text>{message}</Text>
       <IconPost className={cx(`icon-post`)} />
+      <Text>{message}</Text>
     </Section>
   )
 }

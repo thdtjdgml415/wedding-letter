@@ -21,14 +21,15 @@ export interface Location {
   address: string
   link: string
   waytocome: {
-    metro: string
-    bus: string
+    metro: string[]
+    bus: string[]
   }
 }
 
 export interface Account {
   bankName: string
-  accsountNumber: string
+  accountNumber: string
+  kakaopayLink?: string
 }
 
 export interface Person {

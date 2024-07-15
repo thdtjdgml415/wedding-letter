@@ -12,6 +12,8 @@
     "classnames": "^2.5.1",
     "date-fns": "^3.6.0",
     "react": "^18.3.1",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "sass": "^1.77.8",
@@ -44,6 +46,7 @@
   "devDependencies": {
     "@craco/craco": "^7.1.0",
     "@types/eslint": "^8",
+    "@types/react-copy-to-clipboard": "^5",
     "craco-alias": "^3.0.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "^9.1.0",

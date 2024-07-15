@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind'
 import { useState } from 'react'
 import ImageViewer from '../ImageViewer'
+
 import Section from '../shared/Section'
 
 import styles from './ImageGallery.module.scss'

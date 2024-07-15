@@ -5,9 +5,14 @@ import styles from './App.module.scss'
 
 import { Wedding } from '@models/wedding'
 
+import AttendCountModal from './components/AttendCountModal'
+import Calendar from './components/sections/Calendar'
+import Contact from './components/sections/Contact'
 import Heading from './components/sections/Heading'
 import ImageGallery from './components/sections/ImageGallery'
 import Invitation from './components/sections/Invitation'
+import Map from './components/sections/Map'
+import Share from './components/sections/Share'
 import Video from './components/sections/Video'
 import Intro from './components/shared/Intro'
 
@@ -67,8 +72,11 @@ function App() {
       />
       <Invitation message={message.invitation} />
       <ImageGallery images={galleryImages} />
-
-      {JSON.stringify(wedding)}
+      <Calendar date={date} />
+      <Map location={location} />
+      <Contact groom={groom} bride={bride} />
+      <Share groomName={groom.name} brideName={bride.name} date={date} />
+      <AttendCountModal wedding={wedding} />
     </div>
   )
 }

@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
+      "@scss/*": ["src/scss/*"],
       "@shared/*": ["src/components/shared/*"],
       "@models/*": ["src/models/*"],
-      "@scss/*": ["src/scss/*"]
+      "@contexts/*": ["src/contexts/*"]
     }
   }
 }

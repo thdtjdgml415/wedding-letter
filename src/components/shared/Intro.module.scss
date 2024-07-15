@@ -2,6 +2,7 @@
 
 .container {
   @include txt-content;
+
   .wrap-persons {
     font-size: 26px;
     display: flex;

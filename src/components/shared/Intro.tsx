@@ -1,11 +1,13 @@
 import classNames from 'classnames/bind'
+
 import { format, parseISO } from 'date-fns'
 import { ko } from 'date-fns/locale'
-import React from 'react'
+import styles from './Intro.module.scss'
 
-import styles from '@shared/Intro.module.scss'
-import Text from '@shared/Text'
 import Section from './Section'
+import Text from './Text'
+
+const cx = classNames.bind(styles)
 
 interface IntroProps {
   groomName: string
@@ -14,8 +16,6 @@ interface IntroProps {
   date: string
   message: string
 }
-
-const cx = classNames.bind(styles)
 
 function Intro({
   groomName,
@@ -46,7 +46,6 @@ function Intro({
     </Section>
   )
 }
-export default Intro
 
 function IconHeart({ className }: { className: string }) {
   return (
@@ -164,3 +163,4 @@ function IconFlower({ className }: { className: string }) {
     </svg>
   )
 }
+export default Intro
