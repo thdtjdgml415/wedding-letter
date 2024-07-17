@@ -7,6 +7,7 @@ function AttendCountModal({ wedding }: { wedding: Wedding }) {
   const $input = useRef<HTMLInputElement>(null)
 
   const haveSeenModal = localStorage.getItem('@have-seen-modal')
+
   useEffect(() => {
     if (haveSeenModal === 'true') return
     open({
@@ -43,7 +44,7 @@ function AttendCountModal({ wedding }: { wedding: Wedding }) {
         close()
       },
     })
-  }, [])
+  }, [open, close, wedding, haveSeenModal])
   return null
 }
 export default AttendCountModal

@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'NanumGgocNaeEum';
   src:
-    url('../assets/fonts/NanumGgocNaeEum.woff2') format('woff2'),
-    url('../assets/fonts/NanumGgocNaeEum.woff') format('woff'),
-    url('../assets/fonts/NanumGgocNaeEum.ttf') format('truetype');
+    url('../assets/fonts/subset-NanumGgocNaeEum.woff2') format('woff2'),
+    url('../assets/fonts/subset-NanumGgocNaeEum.woff') format('woff');
+  display: swap;
 }
