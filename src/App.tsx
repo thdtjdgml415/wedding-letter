@@ -1,4 +1,3 @@
-import FullScreenMessage from '@shared/FullScreenMessage'
 import classNames from 'classnames/bind'
 import { useState } from 'react'
 import styles from './App.module.scss'
@@ -18,19 +17,13 @@ import useWedding from './hooks/useWedding'
 const cx = classNames.bind(styles)
 
 function App() {
-  const { wedding, loading, error } = useWedding()
+  const { wedding, isLoading, error } = useWedding()
   const [count, setCount] = useState(0)
   // 1. wedding 데이터 호출
 
+  if (isLoading) return <div>로딩중</div>
+  if (error) return <div>에러</div>
   if (wedding == null) return null
-
-  if (loading) {
-    return <FullScreenMessage type="loading" />
-  }
-
-  if (error) {
-    return <FullScreenMessage type="error" />
-  }
 
   const { date, galleryImages, groom, bride, location, message } = wedding
 

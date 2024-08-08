@@ -1,17 +1,28 @@
-import React from 'react'
+import FullScreenMessage from '@shared/FullScreenMessage'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './App'
+import ErrorBoundary from './components/shared/ErrorBoundary'
 import { ModalContext } from './contexts/ModalContexts'
 
 import reportWebVitals from './reportWebVitals'
 import './scss/global.scss'
 
+const queryClient = new QueryClient()
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
-    <ModalContext>
-      <App />
-    </ModalContext>
+    <QueryClientProvider client={queryClient}>
+      <ModalContext>
+        <ErrorBoundary fallbackUI={<FullScreenMessage type="error" />}>
+          <Suspense fallback={<FullScreenMessage type="loading" />}>
+            <App />
+          </Suspense>
+        </ErrorBoundary>
+      </ModalContext>
+    </QueryClientProvider>
   </React.StrictMode>,
 )
 
