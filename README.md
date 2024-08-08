@@ -1,5 +1,7 @@
 # 나만의 첨첩장
 
+렌더링 최적화와 공통 컴포넌트를 만들어 재사용하는 것을 연습하기 위해 만들었습니다.
+
 ![이미지](https://raw.githubusercontent.com/thdtjdgml415/next-blog/main/assets/img/wedding/wedding0.webp)
 
 npm을 왜 사용하지 않을까?
